@@ -83,22 +83,22 @@ describe('When logged in', async () => {
 // })
 
 // compact way of running these tests that aim to check the same thing
-describe('When user is not logged in', async () => {
-  const actions = [
-    {
-      method: 'get',
-      path: 'api/blogs',
-    },
-    {
-      method: 'post',
-      path: 'api/blogs',
-      data: {title: 'T', content: 'C'}
-    },
-  ]
-  test('Blog related actions are prohibited', async () => {
-    const results = await page.execRequests(actions)
-    for(let result of results) {
-      expect(result).toEqual({ error: 'You must log in!' })
-    }
-  })
-})
+// describe('When user is not logged in', async () => {
+//   const actions = [
+//     {
+//       method: 'get',
+//       path: 'api/blogs',
+//     },
+//     {
+//       method: 'post',
+//       path: 'api/blogs',
+//       data: {title: 'T', content: 'C'}
+//     },
+//   ]
+//   test('Blog related actions are prohibited', async () => {
+//     const results = await page.execRequests(actions)
+//     for(let result of results) {
+//       expect(result).toEqual({ error: 'You must log in!' })
+//     }
+//   })
+// })
